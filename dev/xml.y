@@ -11,6 +11,7 @@
 %token  STR
 %token  DATA
 %token  SHORTEND
+%token  ERROR
 
 %%
 

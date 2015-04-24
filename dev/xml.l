@@ -42,6 +42,7 @@ NOSPACE [ \t\r\n]
 <INITIAL>"</b4>"    { printf("END B4\n"); return EB4; }
 <*>{SPACE}          { printf("SPACE\n"); }
 <*>\n               { cnt++; printf("LF(beginning line %i)\n", cnt); }
+<INITIAL>.          { printf("Unrecognized character : %c\n"); return ERROR; }
 
 %%
 
