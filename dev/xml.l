@@ -27,7 +27,7 @@ NOSPACE [ \t\r\n]
 <LSTR>\"            { printf("QUOTE\n"); return *yytext; }
 <LSTR>[^\"]+        { printf("STR : %s\n", yytext); yylval=*yytext; return STR; }
 <LDATA>[^</]+       { printf("DATA : %s\n", yytext); yylval=*yytext; return DATA; }
-<LRAW>[^</]+"-:)"   { printf("RAW : %s\n", yytext); yylval=*yytext; return DATA; }
+<LRAW>[^</]?"-:)"   { printf("RAW : %s\n", yytext); yylval=*yytext; return DATA; }
 <INITIAL>"<b0"      { printf("START B0\n"); return B0; }
 <INITIAL>"<b1"      { printf("START B1\n"); return B1; }
 <INITIAL>"<b2"      { printf("START B2\n"); return B2; }

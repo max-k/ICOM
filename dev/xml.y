@@ -15,8 +15,10 @@
 %%
 
 xml: b0 ;
-b0: B0 b0_atts '>' b0_tree EB0 ;
-b0_atts: { push_atts_state(); } b0_att0 b0_att1 { pop_state(); } ;
+b0: B0 { push_atts_state(); } b0_atts { pop_state(); } '>' b0_tree EB0 ;
+b0_atts: b0_att0 b0_att1
+        | b0_att1 b0_att0
+;
 b0_att0: 'N' '=' { push_int_state(); } INT { pop_state(); } ;
 b0_att1: 'S' 'S' '=' { push_str_state(); } '"' STR '"' { pop_state(); } ;
 b0_tree: b0_child0 b0_child1 ;
