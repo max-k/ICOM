@@ -1,0 +1,7 @@
+*.o
+*.output
+lex.yy.*
+*.tab.*
+.*.swp
+xml
+dtd
