@@ -1,0 +1,15 @@
+{b0 N=INT, SS=STRING (
+        (
+                {b1 DATA}+
+                |
+                {b2 RAWDATA="-:)"}+
+        ) & (
+                {b3 INT}+
+                |
+                {b4 (
+                        b1
+                        &
+                        b2
+                )}
+        )*
+)}

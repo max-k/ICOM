@@ -1,0 +1,9 @@
+{
+ex9
+    NN=INT,
+    NNN=STRING,
+    NNNN=CNUM,
+    NNNNN=CNUM:CNUM,
+    NNNNNN=(ex0 ex1)
+    DATA
+}
